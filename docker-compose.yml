@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+    node-app:
+        restart: on-failure
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - "3001:3000"
+
+    node-app-test:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        command: ["npm", "test"]
