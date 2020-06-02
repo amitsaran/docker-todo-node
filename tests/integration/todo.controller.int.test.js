@@ -9,6 +9,10 @@ let firstTodo, newTodoId;
 const nonExistingTodoId = "5d5fff516bef3c07ecf32f91";
 const testData = { title: "Make integration test for PUT", status: "pending" };
 
+afterAll((done) => {
+    done();
+});
+
 describe(endpointUrl, () => {
     test("POST " + endpointUrl, async () => {
         const response = await request(app)
@@ -81,8 +85,4 @@ describe(endpointUrl, () => {
             .send();
         expect(res.statusCode).toBe(404);
     });
-});
-
-describe(endpointUrl, () => {
-    
 });
