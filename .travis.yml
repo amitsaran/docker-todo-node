@@ -4,7 +4,19 @@ services:
     - docker
 
 before_install:
+    # install heroku cli
+    - wget -qO- https://toolbelt.heroku.com/install.sh | sh
+    # login to docker registry
+    - docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com
     - docker build -t amitsaran/docker-todo-node -f Dockerfile.dev .
 
 script:
     - docker run amitsaran/docker-todo-node npm run test -- --coverage
+    - docker build -t registry.heroku.com/docker-todo-node/web .
+
+deploy:
+    provider: script 
+    script: 
+        docker push registry.heroku.com/docker-todo-node/web; 
+    on: 
+        branch: master

@@ -1,9 +1,11 @@
 const app = require("./app");
 
+const PORT = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
     res.json({"data": "Hello World!!!"})
 });
 
-app.listen(3000, () => {
-    console.log("Server is up and running");
+app.listen(PORT, () => {
+    console.log("Server is up and running!!!!");
 });
