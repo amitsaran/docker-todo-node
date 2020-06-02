@@ -17,6 +17,7 @@ script:
 deploy:
     provider: script 
     script: 
-        docker push registry.heroku.com/docker-todo-node/web; 
+        docker push registry.heroku.com/docker-todo-node/web;
+        heroku container:release web --app docker-todo-node; 
     on: 
         branch: master
