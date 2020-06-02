@@ -11,7 +11,7 @@ const nonExistingTodoId = "5d5fff516bef3c07ecf32f91";
 const testData = { title: "Make integration test for PUT", status: "pending" };
 
 afterAll(async (done) => {
-    console.log("after all tests are run");
+    console.log("All tests are run!!!");
     done();
     setTimeout(() => process.exit(), 1000);
 });
