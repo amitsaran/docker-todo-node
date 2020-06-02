@@ -7,17 +7,17 @@ before_install:
     # install heroku cli
     - wget -qO- https://toolbelt.heroku.com/install.sh | sh
     # login to docker registry
-    - docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com
-    - docker build -t amitsaran/docker-todo-node -f Dockerfile.dev .
+    - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+    - docker build -t amitsaran/$HEROKU_APP_NAME -f Dockerfile.dev .
 
 script:
-    - docker run amitsaran/docker-todo-node npm run test -- --coverage
-    - docker build -t registry.heroku.com/docker-todo-node/web .
+    - docker run amitsaran/$HEROKU_APP_NAME npm run test -- --coverage
+    - docker build -t registry.heroku.com/$HEROKU_APP_NAME/web .
 
 deploy:
     provider: script 
     script: 
-        docker push registry.heroku.com/docker-todo-node/web;
-        heroku container:release web --app docker-todo-node; 
+        docker push registry.heroku.com/$HEROKU_APP_NAME/web;
+        heroku container:release web --app $HEROKU_APP_NAME; 
     on: 
         branch: master
