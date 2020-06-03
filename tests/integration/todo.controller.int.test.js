@@ -13,7 +13,7 @@ const testData = { title: "Make integration test for PUT", status: "pending" };
 afterAll(async (done) => {
     console.log("All tests are run!!!");
     done();
-    setTimeout(() => process.exit(0), 10);
+    setTimeout(() => process.exit(1), 10);
 });
 
 describe(endpointUrl, () => {
