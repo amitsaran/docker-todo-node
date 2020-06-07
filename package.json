@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,9 @@
     "mongoose": "^5.9.16"
   },
   "devDependencies": {
-    "node-mocks-http": "^1.8.1",
+    "@shelf/jest-mongodb": "^1.1.5",
     "jest": "^26.0.1",
+    "node-mocks-http": "^1.8.1",
     "supertest": "^4.0.2"
   }
 }

@@ -1,14 +1,16 @@
 const mongoose = require("mongoose");
 
-async function connect(){
+async function connect(mongoURI = "mongodb+srv://amit:amit@cluster0-sw1lq.mongodb.net/todo-tdd?retryWrites=true&w=majority"){
     try{
         await mongoose.connect(
-            "mongodb+srv://amit:amit@cluster0-sw1lq.mongodb.net/todo-tdd?retryWrites=true&w=majority",
+            mongoURI,
             {
                 useUnifiedTopology: true,
                 useNewUrlParser: true
             } 
         );
+
+        return mongoose.connection;
 
     } catch(err){
         console.log("Error connecting to mongodb cluster");
