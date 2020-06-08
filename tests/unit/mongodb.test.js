@@ -1,22 +1,15 @@
 //const {MongoClient} = require("mongodb");
 const { connect } = require("../../mongodb/mongodb.connect");
 
+let timeout = 20000;
+
 describe("mongodb", () => {
     let collection;
     //let db;
 
     beforeAll(async () => {
-        //connection = await MongoClient.connect("mongodb+srv://amit:amit@cluster0-sw1lq.mongodb.net/todo-tdd?retryWrites=true&w=majority",
-        //{
-        //    useUnifiedTopology: true,
-        //    useNewUrlParser: true
-        //});
-
-
-
-        //db = await connection.db();
         connection = await connect();
-    });
+    }, timeout);
 
     afterAll(async () => {
         await connection.close();
