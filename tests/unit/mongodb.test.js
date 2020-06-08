@@ -19,12 +19,12 @@ describe("mongodb", () => {
         expect(connection).not.toBeNull();
     });
 
-    it("should throw error", async () => {
+    /*it("should throw error", async () => {
         try{
             await connect("abc");
         }catch(e){
             expect(e).toBeDefined();
             expect(e).not.toBeNull();
         }
-    });
+    });*/
 });
