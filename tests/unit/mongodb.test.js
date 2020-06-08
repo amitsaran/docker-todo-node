@@ -4,16 +4,15 @@ const { connect } = require("../../mongodb/mongodb.connect");
 let timeout = 20000;
 
 describe("mongodb", () => {
-    let collection;
-    //let db;
+    let collection = {};
 
-    beforeAll(async () => {
+    /*beforeAll(async () => {
         connection = await connect();
     }, timeout);
 
     afterAll(async () => {
         await connection.close();
-    });
+    });*/
 
     it("should have a successful connection", () => {
         expect(connection).toBeDefined();
