@@ -1,11 +1,11 @@
 language: node_js
-node_js:
-  - "11"
-os:    
-    - linux
-
 sudo: required
 
+node_js:
+    - "11"
+os:    
+    - linux
+    
 services:
     - docker
 
