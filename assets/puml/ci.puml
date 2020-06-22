@@ -1,0 +1,44 @@
+@startuml
+
+title CI CD - GitHub, Travis, Docker, Heroku
+
+skinparam componentStyle uml2
+
+package "Development" {
+  component Developers
+}
+
+package "Source Cotrol - GitHub" as GitHub {
+  component "Pull Request" as PR
+}
+
+package "CI CD - Travis" as Travis{
+  component "Fetch Changes" as FT
+  component Build
+  component "Unit / Integration Test" as Test
+  component Deploy
+}
+
+package "Docker hosted in Heroku" as Docker{
+  component "Container" as Container
+}
+
+package "External Services" as ES{
+  component MongoDB as DB
+}
+
+package "External Network" as EN {
+  component [User] as WebBrowser
+}
+
+Developers -r-> PR : commit / pull request
+PR .d.> FT : trigger
+FT -u-> PR : fetch changes
+FT -r-> Build : success 
+Build -r-> Test : success
+Test -r-> Deploy : success
+Deploy -d-> Container
+Container -d-> DB
+WebBrowser -r-> Docker
+
+@enduml
