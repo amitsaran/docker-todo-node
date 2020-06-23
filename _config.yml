@@ -1,0 +1,4 @@
+theme: jekyll-theme-tactile
+title: Example CI-CD pipeline
+description: Example CI-CD pipeline
+baseurl: /docker-todo-node

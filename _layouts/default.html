@@ -21,18 +21,15 @@
         </header>
         <hr>
         -->
-        <br> <br> <br> <br> <br>
+        <br> <br> <br>
+        {% include nav.html %}
         <section id="main_content">               
           {{ content }}
-        </section>
-
-        <footer>
-          {% include footer.html %}
-          2020@<a href="https://github.com/amitsaran">Amit Saran</a>
-        </footer>
-
+        </section>  
       </div>
     </div>
-
+    {% include footer.html %}
+    <div align="center"><a href="https://github.com/amitsaran">Visit GitHub Profile</a></div>
+  
   </body>
 </html>
