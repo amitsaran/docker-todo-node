@@ -70,17 +70,13 @@
 # Page Link
 ----------------------------------------------------------------*/
 
-.page-links a {
+.github-link {
   color: #e96b56;
   font-size: 12px;
   padding-left: 10px;
 }
 
-.page-links a:first-child {
-  padding-left: 0;
-}
-
-.page-links a:hover {
+.github-link:hover {
   color: #545454;
   font-size: 12px;
   text-decoration: none;
