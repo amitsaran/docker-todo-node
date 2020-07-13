@@ -115,3 +115,23 @@
   color: #e96b56;
   text-decoration: none;
 }
+
+.connect-btn {
+  margin-top: 5px;
+  background: #545454;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 8px 5px 8px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 16px;
+  border: 2px solid #cdd1d9;
+  text-decoration: none;
+}
+
+.connect-btn:hover {
+  background: #e96b56;
+  color: #fff;
+  border-color: #545454;
+  text-decoration: none;
+}
