@@ -1,3 +1,8 @@
+env:
+  global:
+    - COVERAGE=true
+    - CODECOV_TOKEN=c47bbd5c-d6d7-4fbe-a475-fc8524915f36
+
 sudo: required
 
 os:
@@ -17,6 +22,9 @@ before_install:
 script:
     - docker run amitsaran/$HEROKU_APP_NAME npm run test -- --coverage
     - docker build -t registry.heroku.com/$HEROKU_APP_NAME/web .
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
 
 deploy:
     provider: script 
