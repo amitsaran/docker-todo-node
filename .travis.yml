@@ -24,7 +24,7 @@ script:
     - docker build -t registry.heroku.com/$HEROKU_APP_NAME/web .
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
+    - docker run npm run codecov
 
 deploy:
     provider: script 
